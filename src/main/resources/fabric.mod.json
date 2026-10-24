@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1,
-	"id": "examplemod",
+	"id": "additives",
 	"version": "${version}",
-	"name": "Example Mod",
-	"description": "This mod aims to help new BTA modders.",
+	"name": "Additives",
+	"description": "Mod for BTA! that adds useful additions to the game.",
 	"authors": [
-		"Turnip Labs"
+		"bradleywoodrs"
 	],
 	"contact": {
 		"homepage": "",
@@ -16,11 +16,11 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"turniplabs.examplemod.ExampleMod"
+			"bradleywoodrs.additives.Additives"
 		]
 	},
 	"mixins": [
-		"examplemod.mixins.json"
+		"additives.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
