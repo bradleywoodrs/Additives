@@ -121,7 +121,7 @@ tasks {
 		with(copySpec {
 			from("src/main/resources/") {
 				include("fabric.mod.json")
-				include("*.mixins.json")
+				include("**/*.mixins.json")
 				expand(resourceMap)
 			}
 		})

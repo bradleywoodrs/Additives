@@ -20,7 +20,7 @@
 		]
 	},
 	"mixins": [
-		"additives.mixins.json"
+		"mixin/additives.rightclickharvest.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
