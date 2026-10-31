@@ -1,5 +1,6 @@
 package bradleywoodrs.additives.fixes.mixin;
 
+import bradleywoodrs.additives.AdditivesConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.input.MouseInput;
 import org.lwjgl.input.Mouse;
@@ -21,19 +22,27 @@ public abstract class MouseInputMixin {
 	private boolean ignoreNextDelta;
 
 	@Unique
+	private static boolean isEnabled() {
+		return AdditivesConfig.CFG.getBoolean("Fixes.mouseInputFix");
+	}
+
+	@Unique
 	private void centerCursor() {
 		Mouse.setCursorPosition(this.minecraft.resolution.getWidthScreenCoords() / 2, this.minecraft.resolution.getHeightScreenCoords() / 2);
 	}
 
 	@Inject(method = "grabCursor", at = @At("HEAD"))
 	private void centerBeforeGrab(CallbackInfo ci) {
-		if (!Mouse.isGrabbed()) {
+		if (isEnabled() && !Mouse.isGrabbed()) {
 			centerCursor();
 		}
 	}
 
 	@Inject(method = "grabCursor", at = @At("TAIL"))
 	private void discardDeltaAfterGrab(CallbackInfo ci) {
+		if (!isEnabled()) {
+			return;
+		}
 		this.deltaX = 0;
 		this.deltaY = 0;
 		this.ignoreNextDelta = true;
@@ -41,7 +50,7 @@ public abstract class MouseInputMixin {
 
 	@Inject(method = "releaseCursor", at = @At("HEAD"))
 	private void centerBeforeRelease(CallbackInfo ci) {
-		if (Mouse.isGrabbed()) {
+		if (isEnabled() && Mouse.isGrabbed()) {
 			centerCursor();
 		}
 	}
