@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "bradleywoodrs.additives.chat.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+  ],
+  "client": [
+    "ScreenChatMixin"
+  ]
+}

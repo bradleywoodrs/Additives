@@ -16,6 +16,8 @@ public class AdditivesConfig {
 			.addEntry("hoeRequired", "Default: true", true);
 		TOML.addCategory("Fixes")
 			.addEntry("mouseInputFix", "Default: true", true);
+		TOML.addCategory("Chat")
+			.addEntry("pauseGame", "Default: false", false);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }

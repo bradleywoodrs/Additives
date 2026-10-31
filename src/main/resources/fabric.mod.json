@@ -21,7 +21,8 @@
 	},
 	"mixins": [
 		"mixin/additives.rightclickharvest.mixins.json",
-		"mixin/additives.fixes.mixins.json"
+		"mixin/additives.fixes.mixins.json",
+		"mixin/additives.chat.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
