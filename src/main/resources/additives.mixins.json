@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "bradleywoodrs.additives.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "BlockLogicCactusMixin",
+    "BlockLogicCropsWheatMixin",
+    "BlockLogicLadderMixin",
+    "BlockLogicPumpkinMixin",
+    "BlockLogicSugarcaneMixin",
+  ],
+  "client": [
+    "MouseInputMixin",
+    "ScreenChatMixin"
+  ]
+}

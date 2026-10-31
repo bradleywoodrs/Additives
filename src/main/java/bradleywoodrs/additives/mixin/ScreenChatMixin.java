@@ -1,4 +1,4 @@
-package bradleywoodrs.additives.chat.mixin;
+package bradleywoodrs.additives.mixin;
 
 import bradleywoodrs.additives.AdditivesConfig;
 import net.minecraft.client.gui.Screen;
