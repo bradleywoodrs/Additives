@@ -13,7 +13,7 @@ Mod for BTA! that adds useful additions and fixes to the game.
 Everything can be disabled in the config
 
 Current Additions and Fixes:
-- Right click harvest, requires hoe. (disable required hoe in config.)
+- Right click harvest, requires hoe.
 - Fixes mouse cursor displacement bug.
 - Disable chat pausing game when open in singleplayer.
 - Place ladders on slabs
