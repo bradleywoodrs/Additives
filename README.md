@@ -1,5 +1,6 @@
 # Additives
 Mod for BTA! that adds useful additions to the game.
+Every addition and fix can be disabled in the config.
 
 *Supported Versions:*
 - BTA! 8.0.1
@@ -10,5 +11,5 @@ Mod for BTA! that adds useful additions to the game.
 
 
 Current Additions and fixes:
-- Right click harvest, requires hoe(can be disabled in config).
+- Right click harvest, requires hoe. (disable required hoe in config.)
 - Fixes mouse cursor displacement bug.
