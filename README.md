@@ -17,4 +17,4 @@ Current Additions and Fixes:
 - Fixes mouse cursor displacement bug.
 - Disable chat pausing game when open in singleplayer.
 - Place ladders on slabs
-- Hay beds allow players to sleep anywhere and it won't set their spawnpoint. Crafted with 6 wheat in a horizontal pattern. Credits to [Vader's Golden Programmer Art Wheat Pack](https://modrinth.com/resourcepack/vaders-golden-programmer-wheat-pack) for the hay bed textures, just recolored them to match wheat's texture.
+- Hay beds allow players to sleep anywhere and it won't set their spawnpoint. Crafted with 6 wheat in a horizontal pattern. Credits to [Vader's Golden Programmer Art Wheat Pack](https://modrinth.com/resourcepack/vaders-golden-programmer-wheat-pack) for the hay textures, just recolored them to match wheat's texture.
