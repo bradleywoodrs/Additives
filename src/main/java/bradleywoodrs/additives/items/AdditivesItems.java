@@ -16,7 +16,7 @@ public final class AdditivesItems {
 	public static Item HAY_BED;
 
 	public static void register() {
-		ItemBuilder hayBed = new ItemBuilder(MOD_ID).setStackSize(1);
+		ItemBuilder hayBed = new ItemBuilder(MOD_ID).setStackSize(4);
 		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
 			hayBed = hayBed.setCreativeInventoryPlacement(new CreativeInventoryPlacement.After(() -> Items.BED));
 		} else {
