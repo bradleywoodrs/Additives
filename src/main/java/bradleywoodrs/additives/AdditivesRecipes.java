@@ -16,6 +16,9 @@ public final class AdditivesRecipes {
 
 	public static void register() {
 		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
+			RecipeBuilder.Shaped(MOD_ID, "WWW", "WWW")
+				.addInput('W', Items.WHEAT)
+				.create("bed_hay", new ItemStack(AdditivesItems.HAY_BED));
 		}
 	}
 }

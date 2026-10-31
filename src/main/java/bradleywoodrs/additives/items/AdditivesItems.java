@@ -13,7 +13,16 @@ import static bradleywoodrs.additives.Additives.MOD_ID;
 public final class AdditivesItems {
 	private AdditivesItems() {}
 
+	public static Item HAY_BED;
+
 	public static void register() {
+		ItemBuilder hayBed = new ItemBuilder(MOD_ID).setStackSize(1);
+		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
+			hayBed.setCreativeInventoryPlacement(new CreativeInventoryPlacement.After(() -> Items.BED));
+		} else {
+			hayBed.addTags(ItemTags.NOT_IN_CREATIVE_MENU);
+		}
+		HAY_BED = hayBed.build(new ItemHayBed("bed.hay", itemKey("bed_hay"), AdditivesConfig.CFG.getInt("IDs.hayBedItemID"), AdditivesBlocks.HAY_BED));
 	}
 
 	private static String itemKey(String name) {
