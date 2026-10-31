@@ -15,6 +15,6 @@ Every addition and fix can be disabled in the config.
 Current Additions and Fixes:
 - Right click harvest, requires hoe. (disable required hoe in config.)
 - Fixes mouse cursor displacement bug.
-- Disable chat pausing game when open.
+- Disable chat pausing game when open in singleplayer.
 - Place ladders on slabs
 - Hay beds for sleeping without setting spawnpoint.
