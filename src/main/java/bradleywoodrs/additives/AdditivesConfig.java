@@ -18,6 +18,8 @@ public class AdditivesConfig {
 			.addEntry("mouseInputFix", "Default: true", true);
 		TOML.addCategory("Chat")
 			.addEntry("pauseGame", "Default: false", false);
+		TOML.addCategory("Ladders")
+			.addEntry("placeOnSlabs", "Default: true", true);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }

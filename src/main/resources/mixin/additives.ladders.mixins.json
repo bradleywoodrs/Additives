@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "bradleywoodrs.additives.ladders.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "bradleywoodrs.additives.mixin.BlockLogicLadderMixin"
+  ],
+  "client": []
+}
