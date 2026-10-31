@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"bradleywoodrs.additives.Additives"
+		],
+		"client": [
+			"bradleywoodrs.additives.AdditivesClient"
 		]
 	},
 	"mixins": [

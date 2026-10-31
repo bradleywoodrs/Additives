@@ -18,6 +18,10 @@ public class AdditivesConfig {
 			.addEntry("rightClickHarvestHoeRequired", "Default: true", true)
 			.addEntry("chatPausesGame", "Default: false", false)
 			.addEntry("placeLaddersOnSlabs", "Default: true", true)
+			.addEntry("hayBedsEnabled", "Default: true", true);
+		TOML.addCategory("IDs")
+			.addEntry("hayBedBlockID", "Default: 8510", 8510)
+			.addEntry("hayBedItemID", "Default: 28510", 28510);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }

@@ -1,5 +1,7 @@
 package bradleywoodrs.additives;
 
+import bradleywoodrs.additives.blocks.AdditivesBlocks;
+import bradleywoodrs.additives.items.AdditivesItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +15,14 @@ public class Additives implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		AdditivesConfig.CFG.getBoolean("RightClickHarvest.enabled");
-		CommonEvents.BEFORE_GAME_START.listen(Key.of(MOD_ID), this::beforeGameStart);
-		CommonEvents.AFTER_GAME_START.listen(Key.of(MOD_ID), this::afterGameStart);
+		AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestEnabled");
+		Key key = Key.of(MOD_ID);
+		CommonEvents.BEFORE_GAME_START.listen(key, this::beforeGameStart);
+		CommonEvents.AFTER_BLOCK_INIT.listen(key, AdditivesBlocks::register);
+		CommonEvents.AFTER_ITEM_INIT.listen(key, AdditivesItems::register);
+		CommonEvents.RECIPES_NAMESPACE_INIT.listen(key, AdditivesRecipes::initNamespace);
+		CommonEvents.RECIPES_READY.listen(key, AdditivesRecipes::register);
+		CommonEvents.AFTER_GAME_START.listen(key, this::afterGameStart);
 		LOGGER.info("Additives initialized.");
 	}
 
