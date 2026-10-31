@@ -9,6 +9,6 @@ import org.spongepowered.asm.mixin.Mixin;
 public abstract class ScreenChatMixin extends Screen {
 	@Override
 	public boolean isPauseScreen() {
-		return AdditivesConfig.CFG.getBoolean("Chat.pauseGame");
+		return AdditivesConfig.CFG.getBoolean("Additions.chatPausesGame");
 	}
 }

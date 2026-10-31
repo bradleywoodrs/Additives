@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class BlockLogicLadderMixin {
 	@Inject(method = "canExistAt", at = @At("RETURN"), cancellable = true)
 	private void allowOnSlabs(World world, TilePosc pos, int meta, CallbackInfoReturnable<Boolean> cir) {
-		if (cir.getReturnValueZ() || !AdditivesConfig.CFG.getBoolean("Ladders.placeOnSlabs")) {
+		if (cir.getReturnValueZ() || !AdditivesConfig.CFG.getBoolean("Additions.placeLaddersOnSlabs")) {
 			return;
 		}
 		BlockLogicLadder ladder = (BlockLogicLadder) (Object) this;

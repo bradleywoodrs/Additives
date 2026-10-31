@@ -11,15 +11,13 @@ public class AdditivesConfig {
 
 
 	static {
-		TOML.addCategory("RightClickHarvest")
-			.addEntry("enabled", "Default: true", true)
-			.addEntry("hoeRequired", "Default: true", true);
 		TOML.addCategory("Fixes")
 			.addEntry("mouseInputFix", "Default: true", true);
-		TOML.addCategory("Chat")
-			.addEntry("pauseGame", "Default: false", false);
-		TOML.addCategory("Ladders")
-			.addEntry("placeOnSlabs", "Default: true", true);
+		TOML.addCategory("Additions")
+			.addEntry("rightClickHarvestEnabled", "Default: true", true)
+			.addEntry("rightClickHarvestHoeRequired", "Default: true", true)
+			.addEntry("chatPausesGame", "Default: false", false)
+			.addEntry("placeLaddersOnSlabs", "Default: true", true)
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }

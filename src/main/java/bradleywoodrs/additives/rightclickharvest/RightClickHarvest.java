@@ -13,11 +13,11 @@ import net.minecraft.core.world.pos.TilePosc;
 
 public class RightClickHarvest {
 	public static boolean canHarvest(Player player) {
-		if (!AdditivesConfig.CFG.getBoolean("RightClickHarvest.enabled")) {
+		if (!AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestEnabled")) {
 			return false;
 		}
 
-		if (AdditivesConfig.CFG.getBoolean("RightClickHarvest.hoeRequired")) {
+		if (AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestHoeRequired")) {
 			ItemStack held = player.getHeldItem();
 			return held != null && held.getItem() instanceof ItemToolHoe;
 		}
@@ -26,7 +26,7 @@ public class RightClickHarvest {
 	}
 
 	public static void damageHoe(Player player) {
-		if (!AdditivesConfig.CFG.getBoolean("RightClickHarvest.hoeRequired")) {
+		if (!AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestHoeRequired")) {
 			return;
 		}
 
