@@ -11,6 +11,8 @@
     "BlockLogicLadderMixin",
     "BlockLogicPumpkinMixin",
     "BlockLogicSugarcaneMixin",
+    "PlayerMixin",
+    "SpawnerMobsMixin"
   ],
   "client": [
     "MouseInputMixin",
