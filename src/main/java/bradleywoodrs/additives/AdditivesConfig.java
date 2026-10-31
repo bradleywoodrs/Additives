@@ -14,6 +14,8 @@ public class AdditivesConfig {
 		TOML.addCategory("RightClickHarvest")
 			.addEntry("enabled", "Default: true", true)
 			.addEntry("hoeRequired", "Default: true", true);
+		TOML.addCategory("Fixes")
+			.addEntry("mouseInputFix", "Default: true", true);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }

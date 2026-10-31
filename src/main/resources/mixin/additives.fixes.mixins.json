@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "bradleywoodrs.additives.fixes.mixin",
+  "compatibilityLevel": "JAVA_${java}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+  ],
+  "client": [
+    "MouseInputMixin"
+  ]
+}

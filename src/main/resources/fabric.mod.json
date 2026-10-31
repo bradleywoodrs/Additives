@@ -3,7 +3,7 @@
 	"id": "additives",
 	"version": "${version}",
 	"name": "Additives",
-	"description": "Mod for BTA! that adds useful additions to the game.",
+	"description": "Mod for BTA! that adds useful additions and fixes to the game.",
 	"authors": [
 		"bradleywoodrs"
 	],
@@ -20,7 +20,8 @@
 		]
 	},
 	"mixins": [
-		"mixin/additives.rightclickharvest.mixins.json"
+		"mixin/additives.rightclickharvest.mixins.json",
+		"mixin/additives.fixes.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=${fabricloader}",
