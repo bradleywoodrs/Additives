@@ -26,7 +26,7 @@ public class RightClickHarvest {
 	}
 
 	public static void damageHoe(Player player) {
-		if (!AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestHoeRequired")) {
+		if (player.world.isClientSide || !AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestHoeRequired")) {
 			return;
 		}
 
