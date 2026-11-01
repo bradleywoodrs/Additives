@@ -3,9 +3,9 @@ package bradleywoodrs.additives.items;
 import bradleywoodrs.additives.AdditivesConfig;
 import bradleywoodrs.additives.blocks.AdditivesBlocks;
 import net.minecraft.core.item.Item;
-import net.minecraft.core.item.Items;
 import net.minecraft.core.item.tag.ItemTags;
 import turniplabs.halplibe.helper.ItemBuilder;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryCategory;
 import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryPlacement;
 
 import static bradleywoodrs.additives.Additives.MOD_ID;
@@ -18,7 +18,7 @@ public final class AdditivesItems {
 	public static void register() {
 		ItemBuilder hayBed = new ItemBuilder(MOD_ID).setStackSize(4);
 		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
-			hayBed = hayBed.setCreativeInventoryPlacement(new CreativeInventoryPlacement.After(() -> Items.BED));
+			hayBed = hayBed.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES));
 		} else {
 			hayBed = hayBed.addTags(ItemTags.NOT_IN_CREATIVE_MENU);
 		}
