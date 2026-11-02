@@ -2,7 +2,7 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"particle": "additives:block/bed_hay/hayblock",
+		"particle": "additives:block/bed_hay/side",
 		"head": "additives:block/bed_hay/hayblock",
 		"bottom": "additives:block/bed_hay/side",
 		"top": "additives:block/bed_hay/head_top"
