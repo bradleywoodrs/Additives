@@ -13,6 +13,7 @@ public final class AdditivesBlocks {
 	private AdditivesBlocks() {}
 
 	public static Block<BlockLogicHayBed> HAY_BED;
+	public static Block<BlockLogicScaffolding> WOODEN_SCAFFOLDING;
 
 	public static void register() {
 		HAY_BED = new BlockBuilder(MOD_ID)
@@ -23,5 +24,10 @@ public final class AdditivesBlocks {
 			.setStatParent(() -> AdditivesItems.HAY_BED)
 			.setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
 			.build("bed.hay", "bed_hay", AdditivesConfig.CFG.getInt("IDs.hayBedBlockID"), BlockLogicHayBed::new);
+
+		WOODEN_SCAFFOLDING = new BlockBuilder(MOD_ID)
+			.setBlockSound(BlockSounds.WOOD)
+			.setHardness(0.0F)
+			.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
 	}
 }

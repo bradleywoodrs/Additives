@@ -21,7 +21,8 @@ public class AdditivesConfig {
 			.addEntry("hayBedsEnabled", "Default: true", true);
 		TOML.addCategory("IDs")
 			.addEntry("hayBedBlockID", "Default: 8510", 8510)
-			.addEntry("hayBedItemID", "Default: 28510", 28510);
+			.addEntry("hayBedItemID", "Default: 28510", 28510)
+			.addEntry("woodenScaffoldingBlockID", "Default: 8511", 8511);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
 	}
 }
