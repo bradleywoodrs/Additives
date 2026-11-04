@@ -15,7 +15,7 @@ public class Additives implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		AdditivesConfig.CFG.getBoolean("Additions.rightClickHarvestEnabled");
+		AdditivesConfig.init();
 		Key key = Key.of(MOD_ID);
 		CommonEvents.BEFORE_GAME_START.listen(key, this::beforeGameStart);
 		CommonEvents.AFTER_BLOCK_INIT.listen(key, AdditivesBlocks::register);

@@ -3,6 +3,9 @@ package bradleywoodrs.additives;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
+import java.io.IOException;
+import java.nio.file.Files;
+
 import static bradleywoodrs.additives.Additives.MOD_ID;
 
 public class AdditivesConfig {
@@ -24,5 +27,13 @@ public class AdditivesConfig {
 			.addEntry("hayBedItemID", "Default: 28510", 28510)
 			.addEntry("woodenScaffoldingBlockID", "Default: 8511", 8511);
 		CFG = new TomlConfigHandler(MOD_ID, TOML);
+		TOML.merge(true, CFG.getRawParsed());
+		try {
+			Files.write(CFG.getConfigFile().toPath(), TOML.toString().getBytes());
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
+
+	public static void init() {}
 }
