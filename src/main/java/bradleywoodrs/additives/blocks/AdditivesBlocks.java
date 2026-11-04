@@ -27,10 +27,16 @@ public final class AdditivesBlocks {
 			.setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
 			.build("bed.hay", "bed_hay", AdditivesConfig.CFG.getInt("IDs.hayBedBlockID"), BlockLogicHayBed::new);
 
-		WOODEN_SCAFFOLDING = new BlockBuilder(MOD_ID)
+		BlockBuilder woodenScaffolding = new BlockBuilder(MOD_ID);
+		if (AdditivesConfig.CFG.getBoolean("Additions.scaffoldingEnabled")){
+			woodenScaffolding = woodenScaffolding.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES));
+		}else {
+			woodenScaffolding = woodenScaffolding.addTags(BlockTags.NOT_IN_CREATIVE_MENU);
+		}
+
+		WOODEN_SCAFFOLDING = woodenScaffolding
 			.setBlockSound(BlockSounds.WOOD)
 			.setHardness(0.0F)
-			.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES))
 			.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
 	}
 }

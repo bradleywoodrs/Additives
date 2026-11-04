@@ -22,9 +22,11 @@ public final class AdditivesRecipes {
 				.addInput('W', Items.WHEAT)
 				.create("bed_hay", new ItemStack(AdditivesItems.HAY_BED));
 		}
-		RecipeBuilder.Shaped(MOD_ID, "PPP", " S ", "S S")
-			.addInput('P', Blocks.PLANKS_OAK)
-			.addInput('S', Items.STICK)
-			.create("wooden_scaffolding", new ItemStack(AdditivesBlocks.WOODEN_SCAFFOLDING));
+		if (AdditivesConfig.CFG.getBoolean("Additions.scaffoldingEnabled")) {
+			RecipeBuilder.Shaped(MOD_ID, "PPP", " S ", "S S")
+				.addInput('P', Blocks.PLANKS_OAK)
+				.addInput('S', Items.STICK)
+				.create("wooden_scaffolding", new ItemStack(AdditivesBlocks.WOODEN_SCAFFOLDING));
+		}
 	}
 }
