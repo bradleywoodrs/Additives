@@ -18,3 +18,4 @@ Current Additions and Fixes:
 - Disable chat pausing game when open in singleplayer.
 - Place ladders on slabs
 - Hay beds allow players to sleep anywhere and it won't set their spawnpoint.(Destroyed on use) Crafted with 6 wheat in a horizontal pattern. Credits to [Vader's Golden Programmer Art Wheat Pack](https://modrinth.com/resourcepack/vaders-golden-programmer-wheat-pack) for the hay textures, just recolored them to match wheat's texture.
+- Wooden Scaffolding block, crafted with 3 sticks and 3 planks.
