@@ -4,6 +4,7 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityFallingBlock;
 import net.minecraft.core.entity.player.Player;
@@ -135,9 +136,10 @@ public class BlockLogicScaffolding extends BlockLogic {
 		TilePos p = new TilePos();
 		int distance = 7;
 		pos.add(Direction.DOWN, p);
-		if (world.getBlockType(p) == block) {
+		Block<?> below = world.getBlockType(p);
+		if (below == block) {
 			distance = world.getBlockData(p);
-		} else if (world.isBlockNormalCube(p)) {
+		} else if (below != Blocks.AIR && !below.hasTag(BlockTags.PLACE_OVERWRITES)) {
 			return 0;
 		}
 		for (Direction direction : Direction.horizontal) {
