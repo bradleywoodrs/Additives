@@ -15,7 +15,7 @@ public abstract class MobMixin {
 	@ModifyExpressionValue(method = "moveEntityWithHeading", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/Mob;isSneaking()Z", ordinal = 2))
 	private boolean additives$descendScaffolding(boolean sneaking) {
 		Mob self = (Mob) (Object) this;
-		return sneaking && self.world.getBlock(MathHelper.floor(self.x), MathHelper.floor(self.bb.minY), MathHelper.floor(self.z)) != AdditivesBlocks.WOODEN_SCAFFOLDING;
+		return sneaking && !(self.world.getBlock(MathHelper.floor(self.x), MathHelper.floor(self.bb.minY), MathHelper.floor(self.z)).getLogic() instanceof BlockLogicScaffolding);
 	}
 
 	@ModifyReturnValue(method = "canClimb", at = @At("RETURN"))
