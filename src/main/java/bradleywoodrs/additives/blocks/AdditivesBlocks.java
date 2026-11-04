@@ -3,6 +3,7 @@ package bradleywoodrs.additives.blocks;
 import bradleywoodrs.additives.AdditivesConfig;
 import bradleywoodrs.additives.items.AdditivesItems;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.material.Materials;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -34,7 +35,7 @@ public final class AdditivesBlocks {
 				.setBlockSound(BlockSounds.WOOD)
 				.setHardness(0.0F)
 				.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES))
-				.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
+				.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), block -> new BlockLogicScaffolding(block, Materials.WOOD));
 		}
 	}
 }
