@@ -1,6 +1,5 @@
 package bradleywoodrs.additives.mixin;
 
-import bradleywoodrs.additives.blocks.AdditivesBlocks;
 import bradleywoodrs.additives.blocks.BlockLogicScaffolding;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
