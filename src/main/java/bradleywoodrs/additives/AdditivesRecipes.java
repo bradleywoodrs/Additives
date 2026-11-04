@@ -24,7 +24,7 @@ public final class AdditivesRecipes {
 		}
 		if (AdditivesConfig.CFG.getBoolean("Additions.scaffoldingEnabled")) {
 			RecipeBuilder.Shaped(MOD_ID, "PPP", " S ", "S S")
-				.addInput('P', Blocks.PLANKS_OAK)
+				.addInput('P', "minecraft:planks")
 				.addInput('S', Items.STICK)
 				.create("wooden_scaffolding", new ItemStack(AdditivesBlocks.WOODEN_SCAFFOLDING));
 		}
