@@ -2,16 +2,14 @@ package bradleywoodrs.additives;
 
 import bradleywoodrs.additives.blocks.AdditivesBlocks;
 import bradleywoodrs.additives.blocks.BlockModelHayBed;
+import bradleywoodrs.additives.blocks.BlockModelScaffold;
 import bradleywoodrs.additives.items.AdditivesItems;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.block.model.BlockModelTransparent;
-import net.minecraft.client.render.block.model.generic.BlockModelGeneric;
 import net.minecraft.client.render.item.model.ItemModelStandard;
 import turniplabs.halplibe.event.defs.ClientEvents;
 import turniplabs.halplibe.util.dependency.Key;
 
 import static bradleywoodrs.additives.Additives.MOD_ID;
-import static net.minecraft.client.render.block.model.BlockModelDispatcher.loadDataModel;
 
 public class AdditivesClient implements ClientModInitializer {
 	@Override
@@ -20,7 +18,7 @@ public class AdditivesClient implements ClientModInitializer {
 
 		ClientEvents.BLOCK_MODEL_RELOAD.listen(key, dispatcher -> {
 			dispatcher.addDispatch(new BlockModelHayBed<>(AdditivesBlocks.HAY_BED));
-			dispatcher.addDispatch(new BlockModelTransparent<>(AdditivesBlocks.WOODEN_SCAFFOLDING, false).setAllTextures(MOD_ID + ":block/wooden_scaffolding"));
+			dispatcher.addDispatch(new BlockModelScaffold(AdditivesBlocks.WOODEN_SCAFFOLDING, false).onRenderLayer(1).setAllTextures(MOD_ID + ":block/wooden_scaffolding"));
 			});
 
 
