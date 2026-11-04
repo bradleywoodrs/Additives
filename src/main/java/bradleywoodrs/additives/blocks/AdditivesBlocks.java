@@ -6,6 +6,8 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryCategory;
+import turniplabs.halplibe.helper.creativeInventory.CreativeInventoryPlacement;
 
 import static bradleywoodrs.additives.Additives.MOD_ID;
 
@@ -28,6 +30,7 @@ public final class AdditivesBlocks {
 		WOODEN_SCAFFOLDING = new BlockBuilder(MOD_ID)
 			.setBlockSound(BlockSounds.WOOD)
 			.setHardness(0.0F)
+			.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES))
 			.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
 	}
 }

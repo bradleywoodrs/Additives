@@ -10,6 +10,7 @@ import turniplabs.halplibe.event.defs.ClientEvents;
 import turniplabs.halplibe.util.dependency.Key;
 
 import static bradleywoodrs.additives.Additives.MOD_ID;
+import static net.minecraft.client.render.block.model.BlockModelDispatcher.loadDataModel;
 
 public class AdditivesClient implements ClientModInitializer {
 	@Override
@@ -18,7 +19,7 @@ public class AdditivesClient implements ClientModInitializer {
 
 		ClientEvents.BLOCK_MODEL_RELOAD.listen(key, dispatcher -> {
 			dispatcher.addDispatch(new BlockModelHayBed<>(AdditivesBlocks.HAY_BED));
-			dispatcher.addDispatch(new BlockModelGeneric<>(AdditivesBlocks.WOODEN_SCAFFOLDING));
+			dispatcher.addDispatch(new BlockModelGeneric<>(AdditivesBlocks.WOODEN_SCAFFOLDING, loadDataModel(MOD_ID + ":block/wooden_scaffolding")));
 			});
 
 
