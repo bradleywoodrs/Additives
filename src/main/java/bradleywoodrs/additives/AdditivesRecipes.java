@@ -26,7 +26,7 @@ public final class AdditivesRecipes {
 			RecipeBuilder.Shaped(MOD_ID, "PPP", " S ", "S S")
 				.addInput('P', "minecraft:planks")
 				.addInput('S', Items.STICK)
-				.create("wooden_scaffolding", new ItemStack(AdditivesBlocks.WOODEN_SCAFFOLDING));
+				.create("wooden_scaffolding", new ItemStack(AdditivesBlocks.WOODEN_SCAFFOLDING, 4));
 		}
 	}
 }
