@@ -16,13 +16,12 @@ public final class AdditivesItems {
 	public static Item HAY_BED;
 
 	public static void register() {
-		ItemBuilder hayBed = new ItemBuilder(MOD_ID).setStackSize(4);
 		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
-			hayBed = hayBed.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES));
-		} else {
-			hayBed = hayBed.addTags(ItemTags.NOT_IN_CREATIVE_MENU);
+			HAY_BED = new ItemBuilder(MOD_ID)
+				.setStackSize(4)
+				.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES))
+				.build(new ItemHayBed("bed.hay", itemKey("bed_hay"), AdditivesConfig.CFG.getInt("IDs.hayBedItemID"), AdditivesBlocks.HAY_BED));
 		}
-		HAY_BED = hayBed.build(new ItemHayBed("bed.hay", itemKey("bed_hay"), AdditivesConfig.CFG.getInt("IDs.hayBedItemID"), AdditivesBlocks.HAY_BED));
 	}
 
 	private static String itemKey(String name) {

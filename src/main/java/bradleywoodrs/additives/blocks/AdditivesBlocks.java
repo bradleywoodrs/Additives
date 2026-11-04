@@ -18,25 +18,23 @@ public final class AdditivesBlocks {
 	public static Block<BlockLogicScaffolding> WOODEN_SCAFFOLDING;
 
 	public static void register() {
-		HAY_BED = new BlockBuilder(MOD_ID)
-			.setBlockSound(BlockSounds.GRASS)
-			.setHardness(0.2F)
-			.setUseInternalLight()
-			.setFlammability(60, 100)
-			.setStatParent(() -> AdditivesItems.HAY_BED)
-			.setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
-			.build("bed.hay", "bed_hay", AdditivesConfig.CFG.getInt("IDs.hayBedBlockID"), BlockLogicHayBed::new);
-
-		BlockBuilder woodenScaffolding = new BlockBuilder(MOD_ID);
-		if (AdditivesConfig.CFG.getBoolean("Additions.scaffoldingEnabled")){
-			woodenScaffolding = woodenScaffolding.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES));
-		}else {
-			woodenScaffolding = woodenScaffolding.addTags(BlockTags.NOT_IN_CREATIVE_MENU);
+		if (AdditivesConfig.CFG.getBoolean("Additions.hayBedsEnabled")) {
+			HAY_BED = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.GRASS)
+				.setHardness(0.2F)
+				.setUseInternalLight()
+				.setFlammability(60, 100)
+				.setStatParent(() -> AdditivesItems.HAY_BED)
+				.setTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_AXE)
+				.build("bed.hay", "bed_hay", AdditivesConfig.CFG.getInt("IDs.hayBedBlockID"), BlockLogicHayBed::new);
 		}
 
-		WOODEN_SCAFFOLDING = woodenScaffolding
-			.setBlockSound(BlockSounds.WOOD)
-			.setHardness(0.0F)
-			.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
+		if (AdditivesConfig.CFG.getBoolean("Additions.scaffoldingEnabled")){
+			WOODEN_SCAFFOLDING = new BlockBuilder(MOD_ID)
+				.setBlockSound(BlockSounds.WOOD)
+				.setHardness(0.0F)
+				.setCreativeInventoryPlacement(new CreativeInventoryPlacement.Category(CreativeInventoryCategory.PLACEABLES))
+				.build("wooden_scaffolding", "wooden_scaffolding", AdditivesConfig.CFG.getInt("IDs.woodenScaffoldingBlockID"), BlockLogicScaffolding::new);
+		}
 	}
 }
